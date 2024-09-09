@@ -58,23 +58,24 @@
         </div>
       </li>
 
-      <li class="nav-item {{ active_class(['Training/*']) }}">
-        <a class="nav-link" data-bs-toggle="collapse" href="#Training" role="button" aria-expanded="{{ is_active_route(['Training/*']) }}" aria-controls="Training">
-          <i class="link-icon" data-feather="mail"></i>
-          <span class="link-title">Training</span>
-          <i class="link-arrow" data-feather="chevron-down"></i>
-        </a>
-        <div class="collapse {{ show_class(['Training/*']) }}" id="Training">
-          <ul class="nav sub-menu">
+      <li class="nav-item {{ active_class(['course/*']) }}">
+    <a class="nav-link" data-bs-toggle="collapse" href="#course" role="button" aria-expanded="{{ is_active_route(['course/*']) }}" aria-controls="course">
+        <i class="link-icon" data-feather="book"></i>
+        <span class="link-title">Courses</span>
+        <i class="link-arrow" data-feather="chevron-down"></i>
+    </a>
+    <div class="collapse {{ show_class(['course/*']) }}" id="course">
+        <ul class="nav sub-menu">
             <li class="nav-item">
-              <a href="{{ url('/Training/inbox') }}" class="nav-link {{ active_class(['Training/inbox']) }}">All Training</a>
+                <a href="{{ url('/courses') }}" class="nav-link {{ active_class(['course']) }}">All Courses</a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/Training/read') }}" class="nav-link {{ active_class(['Training/read']) }}">Add Training</a>
+                <a href="{{ url('/courses/create') }}" class="nav-link {{ active_class(['course/create']) }}">Add Course</a>
             </li>
-          </ul>
-        </div>
-      </li>
+        </ul>
+    </div>
+</li>
+
 
       <li class="nav-item {{ active_class(['Module/*']) }}">
         <a class="nav-link" data-bs-toggle="collapse" href="#Module" role="button" aria-expanded="{{ is_active_route(['Module/*']) }}" aria-controls="Module">

@@ -1,14 +1,14 @@
-// sweet-alert.js
-
 // Ensure that jQuery is loaded before this script
 $(function() {
   // Define the showSwal function
-  function showSwal(type, userId) {
+  function showSwal(type, id) {
     'use strict';
-    
-    const form = document.getElementById('form-' + userId);
 
-    if (type === 'delete_users' && form) {
+    // Form for both user and course deletions
+    const form = document.getElementById('form-' + id);
+
+    // Check the type of swal alert and ensure form exists
+    if ((type === 'delete_users' || type === 'delete_courses') && form) {
       const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
           confirmButton: 'btn btn-success',
@@ -31,7 +31,7 @@ $(function() {
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire(
             'Cancelled',
-            'The user is safe :)',
+            'Your action is cancelled!',
             'error'
           );
         }
@@ -41,6 +41,6 @@ $(function() {
     }
   }
 
-  // Expose showSwal function to global scope if needed
+  // Expose showSwal function to the global scope
   window.showSwal = showSwal;
 });

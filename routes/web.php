@@ -12,6 +12,8 @@
 */
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CourseController;
+
 
 Route::get('/', function () {
     return view('dashboard');
@@ -26,6 +28,7 @@ Route::group(['prefix' => 'email'], function(){
 });
 */
 Route::resource('users', UserController::class);
+Route::resource('courses', CourseController::class);
 
 
 // 404 for undefined routes
