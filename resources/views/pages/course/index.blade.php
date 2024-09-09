@@ -43,6 +43,7 @@
                 <td>{{ $course->total_lessons }}</td>
                 <td>{{ $course->trainer }}</td>
                 <td>
+                    <a href="{{ route('courses.show', $course->id) }}" class="btn btn-info btn-sm">View</a>
                     <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-warning btn-sm">Edit</a>
                     <button class="btn btn-danger btn-sm" onclick="showSwal('delete_courses', {{ $course->id }})">Delete</button>
                     <form id="form-{{ $course->id }}" action="{{ route('courses.destroy', $course->id) }}" method="POST" style="display: none;">
